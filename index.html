@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Transformation Case Study | Brady Redfearn</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(to bottom right, #f8fafc, #e2e8f0);
+            min-height: 100vh;
+        }
+        #root {
+            width: 100%;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState } = React;
+
+        const CulturalTransformationCase = () => {
+          const [activeSection, setActiveSection] = useState('overview');
+
+          const metrics = [
+            { label: 'UX Maturity Level', before: '1/5', after: '4/5', change: '+300%' },
+            { label: 'User Research Frequency', before: 'Ad-hoc', after: 'Bi-weekly', change: '∞' },
+            { label: 'Design Iteration Cycles', before: '1-2', after: '5-7', change: '+250%' },
+            { label: 'Customer Satisfaction', before: '6.2/10', after: '8.7/10', change: '+40%' },
+            { label: 'Time to Market', before: '6 months', after: '3 months', change: '-50%' },
+            { label: 'Development Rework', before: '35%', after: '12%', change: '-66%' }
+          ];
+
+          const phases = [
+            {
+              phase: 'Phase 1: Assessment & Vision',
+              duration: '2 months',
+              activities: [
+                'Conducted organizational UX maturity assessment',
+                'Stakeholder interviews with C-suite, product, and engineering leaders',
+                'Competitive analysis of UX practices in similar organizations',
+                'Developed UX vision aligned with business strategy',
+                'Secured executive sponsorship and budget allocation'
+              ],
+              outcomes: ['Executive buy-in achieved', 'Baseline metrics established', 'Transformation roadmap approved']
+            },
+            {
+              phase: 'Phase 2: Foundation Building',
+              duration: '4 months',
+              activities: [
+                'Established UX team structure and hiring plan',
+                'Created UX design system and component library',
+                'Implemented research operations framework',
+                'Integrated UX into Agile/Scrum ceremonies',
+                'Launched internal UX training program for engineers and PMs'
+              ],
+              outcomes: ['3 UX researchers hired', '2 product designers onboarded', 'First design system v1.0 launched']
+            },
+            {
+              phase: 'Phase 3: Process Integration',
+              duration: '6 months',
+              activities: [
+                'Embedded UX researchers in cross-functional squads',
+                'Implemented continuous discovery practices',
+                'Established metrics-driven design validation',
+                'Created quarterly UX research roadmap process',
+                'Developed executive UX scorecard reporting'
+              ],
+              outcomes: ['100% of squads include UX resources', 'Research insights inform 90% of features', 'Monthly UX metrics dashboards live']
+            },
+            {
+              phase: 'Phase 4: Cultural Embedding',
+              duration: 'Ongoing',
+              activities: [
+                'Launched company-wide UX advocacy program',
+                'Established user testing participation requirements for all PMs',
+                'Created internal UX conference and showcase events',
+                'Integrated UX KPIs into performance reviews',
+                'Built external UX brand through conference presentations'
+              ],
+              outcomes: ['CEO publicly identifies company as "a UX company"', 'UX excellence becomes hiring differentiator', 'Industry recognition achieved']
+            }
+          ];
+
+          const challenges = [
+            {
+              challenge: 'Engineering skepticism of UX value',
+              solution: 'Ran pilot project showing 40% reduction in support tickets after UX improvements'
+            },
+            {
+              challenge: 'Existing product backlog conflicts',
+              solution: 'Demonstrated that UX discovery reduced wasted development time by 30%'
+            },
+            {
+              challenge: 'Limited UX budget and headcount',
+              solution: 'Built ROI model showing $3 saved for every $1 invested in UX research'
+            },
+            {
+              challenge: 'Resistance to slower initial velocity',
+              solution: 'Proved that discovery upfront accelerated delivery by 50% in subsequent sprints'
+            }
+          ];
+
+          const leadership = [
+            {
+              principle: 'Lead with Data',
+              description: 'Every transformation initiative backed by quantitative metrics and qualitative evidence showing business impact.',
+              example: 'Presented quarterly UX scorecards to board showing correlation between UX maturity and revenue growth.'
+            },
+            {
+              principle: 'Build Coalitions',
+              description: 'Identified and empowered UX champions across engineering, product, and sales to create grassroots momentum.',
+              example: 'Created "UX Ambassador" program with 15 volunteers from different departments advocating for user-centered practices.'
+            },
+            {
+              principle: 'Show Quick Wins',
+              description: 'Delivered tangible improvements within first 90 days to build credibility and secure continued investment.',
+              example: 'Redesigned onboarding flow resulting in 25% increase in trial-to-paid conversion within 60 days.'
+            },
+            {
+              principle: 'Scale Through Systems',
+              description: 'Built repeatable frameworks, templates, and processes that enable UX excellence without constant oversight.',
+              example: 'Created research playbooks and design system reducing time-to-design from weeks to days.'
+            }
+          ];
+
+          return (
+            <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom right, #f1f5f9, #e2e8f0)' }}>
+              {/* Hero Header */}
+              <div style={{ background: 'linear-gradient(to right, #7c3aed, #a855f7, #4f46e5)', color: 'white' }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '4rem 2rem' }}>
+                  <p style={{ fontSize: '0.875rem', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem', opacity: 0.9 }}>Executive Case Study</p>
+                  <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>Cultural Transformation</h1>
+                  <p style={{ fontSize: '1.25rem', opacity: 0.95, maxWidth: '800px', lineHeight: '1.7', marginBottom: '2rem' }}>
+                    How I transformed a software development company into "a UX company" - driving organizational change, building world-class teams, and embedding user-centered design into company DNA.
+                  </p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+                    <div style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '0.5rem 1rem', borderRadius: '0.5rem' }}>
+                      <p style={{ fontSize: '0.75rem', opacity: 0.9 }}>Industry</p>
+                      <p style={{ fontWeight: '600' }}>Enterprise Software</p>
+                    </div>
+                    <div style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '0.5rem 1rem', borderRadius: '0.5rem' }}>
+                      <p style={{ fontSize: '0.75rem', opacity: 0.9 }}>Team Size</p>
+                      <p style={{ fontWeight: '600' }}>0 → 8 UX professionals</p>
+                    </div>
+                    <div style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '0.5rem 1rem', borderRadius: '0.5rem' }}>
+                      <p style={{ fontSize: '0.75rem', opacity: 0.9 }}>Timeline</p>
+                      <p style={{ fontWeight: '600' }}>18 months</p>
+                    </div>
+                    <div style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '0.5rem 1rem', borderRadius: '0.5rem' }}>
+                      <p style={{ fontSize: '0.75rem', opacity: 0.9 }}>Impact</p>
+                      <p style={{ fontWeight: '600' }}>300% UX maturity increase</p>
+                    </div>
+                  </div>
+                  <a href="https://redfearnb.github.io" style={{ display: 'inline-block', marginTop: '2rem', color: 'white', textDecoration: 'none', opacity: 0.9 }}>← Back to Portfolio</a>
+                </div>
+              </div>
+
+              {/* Navigation */}
+              <div style={{ background: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', position: 'sticky', top: 0, zIndex: 100 }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                  <div style={{ display: 'flex', gap: '2rem', overflowX: 'auto' }}>
+                    {['overview', 'challenges', 'approach', 'leadership', 'results'].map((section) => (
+                      <button
+                        key={section}
+                        onClick={() => setActiveSection(section)}
+                        style={{
+                          padding: '1rem 0.5rem',
+                          border: 'none',
+                          borderBottom: activeSection === section ? '2px solid #7c3aed' : '2px solid transparent',
+                          background: 'none',
+                          color: activeSection === section ? '#7c3aed' : '#6b7280',
+                          fontWeight: '500',
+                          cursor: 'pointer',
+                          whiteSpace: 'nowrap',
+                          fontSize: '1rem',
+                          textTransform: 'capitalize'
+                        }}
+                      >
+                        {section}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 2rem' }}>
+                {/* Overview Section */}
+                {activeSection === 'overview' && (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                    <div style={{ background: 'white', borderRadius: '0.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', padding: '2rem' }}>
+                      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#1f2937' }}>The Challenge</h2>
+                      <p style={{ color: '#374151', marginBottom: '1rem', lineHeight: '1.7' }}>
+                        When I joined the organization, UX was an afterthought. The company operated in a traditional waterfall model where design decisions were made by engineers based on technical constraints rather than user needs. Customer satisfaction scores were declining, development teams were spending 35% of their time fixing usability issues post-release, and competitive pressure was mounting.
+                      </p>
+                      <p style={{ color: '#374151', lineHeight: '1.7' }}>
+                        The executive team recognized the need for change but didn't know where to start. I was brought in with a mandate: transform how we build products by making users the center of every decision.
+                      </p>
+                    </div>
+
+                    <div style={{ background: 'linear-gradient(to bottom right, #ede9fe, #f3e8ff)', borderRadius: '0.5rem', padding: '2rem', border: '1px solid #c4b5fd' }}>
+                      <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#1f2937' }}>🎯 Strategic Objectives</h3>
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                        <div>
+                          <h4 style={{ fontWeight: '600', marginBottom: '0.75rem', color: '#1f2937' }}>Business Goals</h4>
+                          <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
+                            <li style={{ marginBottom: '0.5rem', color: '#374151', paddingLeft: '1.5rem', position: 'relative' }}>
+                              <span style={{ position: 'absolute', left: 0, color: '#7c3aed' }}>✓</span>
+                              Increase customer satisfaction by 30%
+                            </li>
+                            <li style={{ marginBottom: '0.5rem', color: '#374151', paddingLeft: '1.5rem', position: 'relative' }}>
+                              <span style={{ position: 'absolute', left: 0, color: '#7c3aed' }}>✓</span>
+                              Reduce development rework by 50%
+                            </li>
+                            <li style={{ marginBottom: '0.5rem', color: '#374151', paddingLeft: '1.5rem', position: 'relative' }}>
+                              <span style={{ position: 'absolute', left: 0, color: '#7c3aed' }}>✓</span>
+                              Accelerate time to market
+                            </li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 style={{ fontWeight: '600', marginBottom: '0.75rem', color: '#1f2937' }}>Cultural Goals</h4>
+                          <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
+                            <li style={{ marginBottom: '0.5rem', color: '#374151', paddingLeft: '1.5rem', position: 'relative' }}>
+                              <span style={{ position: 'absolute', left: 0, color: '#7c3aed' }}>✓</span>
+                              Embed UX into company identity
+                            </li>
+                            <li style={{ marginBottom: '0.5rem', color: '#374151', paddingLeft: '1.5rem', position: 'relative' }}>
+                              <span style={{ position: 'absolute', left: 0, color: '#7c3aed' }}>✓</span>
+                              Build world-class UX team
+                            </li>
+                            <li style={{ marginBottom: '0.5rem', color: '#374151', paddingLeft: '1.5rem', position: 'relative' }}>
+                              <span style={{ position: 'absolute', left: 0, color: '#7c3aed' }}>✓</span>
+                              Create sustainable UX practices
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Challenges Section */}
+                {activeSection === 'challenges' && (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                    <div style={{ background: 'white', borderRadius: '0.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', padding: '2rem' }}>
+                      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#1f2937' }}>Overcoming Organizational Resistance</h2>
+                      <p style={{ color: '#374151', marginBottom: '2rem', lineHeight: '1.7' }}>
+                        Cultural transformation isn't about processes or tools - it's about changing hearts and minds. Here's how I navigated the most significant challenges:
+                      </p>
+                      
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                        {challenges.map((item, idx) => (
+                          <div key={idx} style={{ borderLeft: '4px solid #7c3aed', paddingLeft: '1.5rem', paddingTop: '1rem', paddingBottom: '1rem' }}>
+                            <h3 style={{ fontWeight: 'bold', fontSize: '1.125rem', marginBottom: '0.5rem', color: '#1f2937' }}>
+                              Challenge: {item.challenge}
+                            </h3>
+                            <p style={{ color: '#374151' }}>
+                              <span style={{ fontWeight: '600', color: '#16a34a' }}>→ Solution:</span> {item.solution}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div style={{ background: '#fef3c7', border: '1px solid #fbbf24', borderRadius: '0.5rem', padding: '1.5rem' }}>
+                      <div style={{ display: 'flex', gap: '1rem' }}>
+                        <div style={{ fontSize: '1.5rem' }}>💡</div>
+                        <div>
+                          <h3 style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: '#1f2937' }}>Key Leadership Lesson</h3>
+                          <p style={{ color: '#374151', lineHeight: '1.7' }}>
+                            The most effective tool for driving change wasn't executive mandates or processes - it was demonstrating undeniable value. Every skeptic became a believer when they saw their product succeed because of user research, not despite it. I built the business case one success story at a time.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Approach Section */}
+                {activeSection === 'approach' && (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                    <div style={{ background: 'white', borderRadius: '0.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', padding: '2rem' }}>
+                      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#1f2937' }}>Four-Phase Transformation Roadmap</h2>
+                      <p style={{ color: '#374151', marginBottom: '2rem', lineHeight: '1.7' }}>
+                        I designed a phased approach that balanced quick wins with sustainable long-term change. Each phase built on the previous one, creating momentum and credibility.
+                      </p>
+
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                        {phases.map((phase, idx) => (
+                          <div key={idx} style={{ position: 'relative' }}>
+                            <div style={{ display: 'flex', gap: '1.5rem' }}>
+                              <div style={{ flexShrink: 0 }}>
+                                <div style={{ width: '3rem', height: '3rem', background: 'linear-gradient(to bottom right, #7c3aed, #a855f7)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '1.25rem', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
+                                  {idx + 1}
+                                </div>
+                              </div>
+                              
+                              <div style={{ flex: 1, background: 'linear-gradient(to bottom right, #f8fafc, white)', borderRadius: '0.5rem', padding: '1.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', border: '1px solid #e2e8f0' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                                  <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#1f2937' }}>{phase.phase}</h3>
+                                  <span style={{ background: '#ede9fe', color: '#7c3aed', padding: '0.25rem 0.75rem', borderRadius: '1rem', fontSize: '0.875rem', fontWeight: '600' }}>
+                                    {phase.duration}
+                                  </span>
+                                </div>
+                                
+                                <div style={{ marginBottom: '1rem' }}>
+                                  <h4 style={{ fontWeight: '600', marginBottom: '0.5rem', color: '#374151' }}>Key Activities:</h4>
+                                  <ul style={{ paddingLeft: 0, listStyle: 'none' }}>
+                                    {phase.activities.map((activity, i) => (
+                                      <li key={i} style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative', color: '#6b7280' }}>
+                                        <span style={{ position: 'absolute', left: 0, color: '#7c3aed' }}>✓</span>
+                                        {activity}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                                
+                                <div>
+                                  <h4 style={{ fontWeight: '600', marginBottom: '0.5rem', color: '#374151' }}>Outcomes:</h4>
+                                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                                    {phase.outcomes.map((outcome, i) => (
+                                      <span key={i} style={{ background: '#dcfce7', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '1rem', fontSize: '0.875rem' }}>
+                                        {outcome}
+                                      </span>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Leadership Section */}
+                {activeSection === 'leadership' && (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                    <div style={{ background: 'white', borderRadius: '0.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', padding: '2rem' }}>
+                      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#1f2937' }}>Leadership Principles in Action</h2>
+                      <p style={{ color: '#374151', marginBottom: '2rem', lineHeight: '1.7' }}>
+                        Transformation requires more than strategy - it demands leadership that inspires, empowers, and delivers results. Here are the core principles that guided my approach:
+                      </p>
+
+                      <div style={{ display: 'grid', gap: '1.5rem' }}>
+                        {leadership.map((item, idx) => (
+                          <div key={idx} style={{ background: 'linear-gradient(to right, #ede9fe, #f3e8ff)', borderRadius: '0.5rem', padding: '1.5rem', border: '1px solid #c4b5fd' }}>
+                            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.75rem', color: '#1f2937' }}>{item.principle}</h3>
+                            <p style={{ color: '#374151', marginBottom: '1rem', lineHeight: '1.7' }}>{item.description}</p>
+                            <div style={{ background: 'white', borderRadius: '0.5rem', padding: '1rem', borderLeft: '4px solid #7c3aed' }}>
+                              <p style={{ fontSize: '0.875rem', fontWeight: '600', marginBottom: '0.25rem', color: '#6b7280' }}>Example in Practice:</p>
+                              <p style={{ color: '#374151' }}>{item.example}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div style={{ background: 'linear-gradient(to right, #4f46e5, #7c3aed)', color: 'white', borderRadius: '0.5rem', padding: '2rem' }}>
+                      <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>CEO Quote</h3>
+                      <blockquote style={{ fontSize: '1.25rem', fontStyle: 'italic', lineHeight: '1.7', borderLeft: '4px solid rgba(255,255,255,0.5)', paddingLeft: '1.5rem' }}>
+                        "Brady didn't just add UX to our company - he fundamentally changed how we think about building products. We're now a UX company that happens to write code, not the other way around."
+                      </blockquote>
+                      <p style={{ marginTop: '1rem', opacity: 0.9 }}>- CEO, following 18-month transformation</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Results Section */}
+                {activeSection === 'results' && (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                    <div style={{ background: 'white', borderRadius: '0.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', padding: '2rem' }}>
+                      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#1f2937' }}>Measurable Business Impact</h2>
+                      
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+                        {metrics.map((metric, idx) => (
+                          <div key={idx} style={{ background: 'linear-gradient(to bottom right, #f8fafc, white)', borderRadius: '0.5rem', padding: '1.5rem', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+                            <h3 style={{ fontSize: '0.875rem', fontWeight: '600', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.025em', marginBottom: '0.75rem' }}>{metric.label}</h3>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                              <div>
+                                <p style={{ fontSize: '0.75rem', color: '#9ca3af' }}>Before</p>
+                                <p style={{ fontSize: '1.125rem', fontWeight: 'bold', color: '#dc2626' }}>{metric.before}</p>
+                              </div>
+                              <div style={{ color: '#9ca3af' }}>→</div>
+                              <div>
+                                <p style={{ fontSize: '0.75rem', color: '#9ca3af' }}>After</p>
+                                <p style={{ fontSize: '1.125rem', fontWeight: 'bold', color: '#16a34a' }}>{metric.after}</p>
+                              </div>
+                            </div>
+                            <div style={{ background: '#dcfce7', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '1rem', fontSize: '0.875rem', fontWeight: 'bold', display: 'inline-block' }}>
+                              {metric.change}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                      <div style={{ background: 'white', borderRadius: '0.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', padding: '1.5rem' }}>
+                        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', color: '#1f2937', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          <span>🏆</span> Team Building Success
+                        </h3>
+                        <ul style={{ paddingLeft: 0, listStyle: 'none' }}>
+                          <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative', color: '#374151' }}>
+                            <span style={{ position: 'absolute', left: 0, color: '#16a34a' }}>✓</span>
+                            Built UX team from 0 to 8 professionals in 12 months
+                          </li>
+                          <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative', color: '#374151' }}>
+                            <span style={{ position: 'absolute', left: 0, color: '#16a34a' }}>✓</span>
+                            Established design system used across 15+ products
+                          </li>
+                          <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative', color: '#374151' }}>
+                            <span style={{ position: 'absolute', left: 0, color: '#16a34a' }}>✓</span>
+                            Created research operations framework scaling to 50+ studies/year
+                          </li>
+                          <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative', color: '#374151' }}>
+                            <span style={{ position: 'absolute', left: 0, color: '#16a34a' }}>✓</span>
+                            Trained 100+ employees in user-centered design principles
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div style={{ background: 'white', borderRadius: '0.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', padding: '1.5rem' }}>
+                        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', color: '#1f2937', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          <span>📈</span> Cultural Indicators
+                        </h3>
+                        <ul style={{ paddingLeft: 0, listStyle: 'none' }}>
+                          <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative', color: '#374151' }}>
+                            <span style={{ position: 'absolute', left: 0, color: '#16a34a' }}>✓</span>
+                            UX mentioned in 100% of executive strategy presentations
+                          </li>
+                          <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative', color: '#374151' }}>
+                            <span style={{ position: 'absolute', left: 0, color: '#16a34a' }}>✓</span>
+                            "User empathy" added to company values statement
+                          </li>
+                          <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative', color: '#374151' }}>
+                            <span style={{ position: 'absolute', left: 0, color: '#16a34a' }}>✓</span>
+                            UX excellence featured in recruitment marketing
+                          </li>
+                          <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative', color: '#374151' }}>
+                            <span style={{ position: 'absolute', left: 0, color: '#16a34a' }}>✓</span>
+                            Company presenting at industry UX conferences
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div style={{ background: 'linear-gradient(to right, #ede9fe, #f3e8ff)', borderRadius: '0.5rem', padding: '2rem', border: '1px solid #c4b5fd' }}>
+                      <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#1f2937' }}>C-Level Takeaways</h3>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', color: '#374151' }}>
+                        <p style={{ lineHeight: '1.7' }}>
+                          <span style={{ fontWeight: 'bold', color: '#7c3aed' }}>ROI on UX Investment:</span> For every dollar invested in UX capabilities, the organization saw $3 in savings from reduced rework, faster time to market, and increased customer retention.
+                        </p>
+                        <p style={{ lineHeight: '1.7' }}>
+                          <span style={{ fontWeight: 'bold', color: '#7c3aed' }}>Sustainable Change:</span> The transformation didn't require my ongoing presence. The systems, processes, and culture are now self-sustaining - the hallmark of successful organizational change.
+                        </p>
+                        <p style={{ lineHeight: '1.7' }}>
+                          <span style={{ fontWeight: 'bold', color: '#7c3aed' }}>Competitive Advantage:</span> UX excellence became a key differentiator in enterprise sales, with prospects specifically citing user experience quality as a decision factor.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Footer CTA */}
+              <div style={{ background: '#1f2937', color: 'white', padding: '3rem 2rem', textAlign: 'center' }}>
+                <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem' }}>Ready to Transform Your Organization?</h2>
+                <p style={{ fontSize: '1.125rem', color: '#d1d5db', marginBottom: '1.5rem' }}>
+                  Let's discuss how I can drive similar results as your next Chief Experience Officer or VP of Product.
+                </p>
+                <a href="https://www.linkedin.com/in/redfearnb/" style={{ display: 'inline-block', background: '#7c3aed', color: 'white', padding: '0.75rem 2rem', borderRadius: '0.5rem', textDecoration: 'none', fontWeight: '600', fontSize: '1.125rem' }}>
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+          );
+        };
+
+        ReactDOM.render(<CulturalTransformationCase />, document.getElementById('root'));
+    </script>
+</body>
+</html>
